@@ -1,0 +1,32 @@
+{
+  "name": "City-Furniture",
+  "version": "1.0.0",
+  "description": "This is a test file for itp",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "admin": "npm start --prefix admin",
+    "dev": "concurrently \"npm run admin\" \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChanduniNethmini/City-Furniture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChanduniNethmini/City-Furniture/issues"
+  },
+  "homepage": "https://github.com/ChanduniNethmini/City-Furniture#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5",
+    "nodemon": "^2.0.12"
+  }
+}
