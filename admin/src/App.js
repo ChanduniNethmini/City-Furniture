@@ -4,6 +4,9 @@ import CreateCatPost from './components/CreateCatPost';
 import EditCatPost from './components/EditCatPost';
 import CatHome from './components/CatHome';
 import PostDetailsCat from './components/PostDetailsCat';
+import OrderHome from './components/OrderHome';
+import EditOrderPost from './components/EditOrderPost';
+import PostDetailsOrder from './components/PostDetailsOrder';
 
 
 /**
@@ -22,9 +25,12 @@ class App extends Component {
     <br/>
     <a href="/">Category</a>
       <Route path="/" exact component={CatHome}></Route>
-        <Route path="/category/add" component={CreateCatPost}></Route>
-        <Route path="/category/edit/:id" component={EditCatPost}></Route>
-        <Route path="/category/post/:id" component={PostDetailsCat}></Route>
+        <Route path="/category/add" exact component={CreateCatPost}></Route>
+        <Route path="/category/edit/:id" exact component={EditCatPost}></Route>
+        <Route path="/category/post/:id" exact component={PostDetailsCat}></Route>
+        <Route path="/order" exact component={OrderHome}></Route>
+        <Route path="/order/edit/:id" exact component={EditOrderPost}></Route>
+        <Route path="/order/post/:id" exact component={PostDetailsOrder}></Route>
         
          
    
