@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {BrowserRouter,Route} from 'react-router-dom';
+import CreateCatPost from './components/CreateCatPost';
+import EditCatPost from './components/EditCatPost';
+import CatHome from './components/CatHome';
+import PostDetailsCat from './components/PostDetailsCat';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+/**
+* @author
+* @class App
+**/
+
+class App extends Component {
+ state = {}
+ render() {
+  return(
+    <BrowserRouter>
+   
+     <h1>Admin dashboard</h1>
+    <a href="/order">Orders</a>
+    <br/>
+    <a href="/">Category</a>
+      <Route path="/" exact component={CatHome}></Route>
+        <Route path="/category/add" component={CreateCatPost}></Route>
+        <Route path="/category/edit/:id" component={EditCatPost}></Route>
+        <Route path="/category/post/:id" component={PostDetailsCat}></Route>
+        
+         
+   
+   </BrowserRouter>
+    )
+   }
+ }
+
+
+App.propTypes = {}
+export default App

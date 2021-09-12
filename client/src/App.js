@@ -12,7 +12,7 @@ class App extends Component{
         
       
         {/* Chanduni */}
-        <Route path="/" component={CreateOrderPost}></Route>
+        <Route path="/order/add" component={CreateOrderPost}></Route>
         
 
 
