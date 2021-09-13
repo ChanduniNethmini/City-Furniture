@@ -9,6 +9,7 @@ import EditOrderPost from './components/EditOrderPost';
 import PostDetailsOrder from './components/PostDetailsOrder';
 
 
+import feedbackList from "./components/feedback/feedback-list";
 /**
 * @author
 * @class App
@@ -32,6 +33,9 @@ class App extends Component {
         <Route path="/order/edit/:id" exact component={EditOrderPost}></Route>
         <Route path="/order/post/:id" exact component={PostDetailsOrder}></Route>
         
+        <Route path = "/feedback/" exact component = { feedbackList }/>
+       
+
          
    
    </BrowserRouter>
