@@ -13,22 +13,14 @@ class App extends Component {
     return (
       <BrowserRouter>
         <CartProvider>
-
           {/* Chanduni */}
           <Route path="/" exact component={Home}></Route>
           <Route path="/cart" exact component={Cart}></Route>
           <Route path="/customized" exact component={CustomizedOrder}></Route>
           <Route path="/order/add" exact component={CreateOrderPost}></Route>
-
-
+          {/* Kithmini */}
           <Route path="/feedback/create" component={Createfeedback} />
-
-
-
         </CartProvider>
-
-
-
       </BrowserRouter>
     )
   }
