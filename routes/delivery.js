@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
- 
+const mongoose = require('mongoose'); 
+
 const deliverySchema = new mongoose.Schema({
 	_id: mongoose.ObjectId,
+
 	deliveryID: String,
 	orderID: String,
 	receiverAddress: String,
@@ -21,7 +22,7 @@ const Delivery = mongoose.model('Delivery', deliverySchema);
 
 
 router.get('/', function (req, res, next) {
-	var page = Number((req.query.page ?? 1) - 1);
+	var page = Number((req.query.page ?? 1) - 1); 
 	var size = Number(req.query.size ?? 5);
 
 	Delivery.countDocuments((n, i) => {
@@ -50,7 +51,7 @@ router.get('/', function (req, res, next) {
 router.get('/getById/:id', function (req, res, next) {
 
 
-	Delivery.find({ "_id": ObjectID(req.params.id) },
+	Delivery.find({ "_id": mongoose.Types.ObjectId(req.params.id) },
 		(e, r) => {
 			res.json(r[0])
 		}
@@ -103,7 +104,7 @@ router.route("/").put(function (req, res) {
 	var { deliveryID, orderID, receiverAddress, assignedDriver, lat, long, status, _id,remarks } = req.body;
 
 
-	const query = { "_id": new ObjectID(_id) };
+	const query = { "_id":  mongoose.Types.ObjectId(_id) };
 	const update = {
 		"$set": {
 			deliveryID,

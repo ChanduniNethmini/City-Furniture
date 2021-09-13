@@ -13,8 +13,14 @@ const feedbackRouter = require("./routes/feedback.js");
  
 
 app.use(bodyParser.json());
-app.use(cors());
-
+app.options('*', cors());
+app.use(cors({
+  origin: '*',
+  credentials: true,
+    exposedHeaders: ["X-Total-Count"],
+    allowedHeaders: ["X-Total-Count"],
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+  }));
 app.use(postRoutes);
 app.use(admincatRoutes);
 app.use("/feedback",feedbackRouter);
@@ -30,7 +36,7 @@ app.use('/api/deliveries', deliveryRouter);
 app.use('/api/orders', orderRouter);
 //  nuwanthika
 
-const PORT =8000;
+const PORT =8081;
 
 //const DB_URL ='mongodb+srv://twg:twg123@mernapp.zc2p7.mongodb.net/mernCrud?retryWrites=true&w=majority';
 const DB_URL='mongodb+srv://sliit:sliit123@itpcluster.fpcc4.mongodb.net/furnitureDB?retryWrites=true&w=majority';

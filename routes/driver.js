@@ -1,8 +1,10 @@
 const { query } = require('express');
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
- 
+const mongoose = require('mongoose'); 
+var cors = require('cors')
+
+
 const driverSchema = new mongoose.Schema({
 	_id: mongoose.ObjectId,
 	empID: String,
@@ -40,7 +42,7 @@ router.get('/', function (req, res, next) {
 router.get('/getById/:id', function (req, res, next) {
 
 
-	Driver.find({ "_id": ObjectID(req.params.id) },
+	Driver.find({ "_id":  mongoose.Types.ObjectId(req.params.id) },
 		(e, r) => {
 			res.json(r[0])
 		}
@@ -88,7 +90,7 @@ router.route("/").put(function (req, res) {
 	const userID = req.params.id;
 	var { empID, empName, vehicleID, currentOrderID, contactNumber, _id } = req.body;
 
-	const query = { "_id": new ObjectID(_id) };
+	const query = { "_id":  mongoose.Types.ObjectId(_id) };
 	const update = {
 		"$set": {
 			empID,
