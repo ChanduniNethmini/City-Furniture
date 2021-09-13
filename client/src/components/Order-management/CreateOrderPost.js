@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import chair from "../img/chair.jpg";
+import chair from "../../img/chair.jpg";
 
 
 export default class CreateOrderPost extends Component {
@@ -17,8 +17,19 @@ export default class CreateOrderPost extends Component {
       town: "",
       contactNo: "",
       orderDate: "",
-      status: "Pending"
+      status: "Pending",
+      cartTotal: "",
     }
+  }
+
+  componentDidMount () {
+    const cart = localStorage.getItem('react-use-cart');
+    const cartdata = JSON.parse(cart);
+    console.log(cartdata.cartTotal)
+    this.setState({
+      cartTotal: cartdata.cartTotal
+    })
+
   }
 
   handleInputChange = (e) => {
@@ -35,7 +46,7 @@ export default class CreateOrderPost extends Component {
 
     e.preventDefault();
 
-    const { name, postalNo, street, town, contactNo, orderDate, status } = this.state;
+    const { name, postalNo, street, town, contactNo, orderDate, status, cartTotal } = this.state;
 
     const data = {
       name: name,
@@ -44,11 +55,14 @@ export default class CreateOrderPost extends Component {
       town: town,
       contactNo: contactNo,
       orderDate: orderDate,
-      status: status
+      status: status,
+      cartTotal:cartTotal
+     
 
     }
 
     console.log(data)
+   
 
     //validation
 
@@ -96,7 +110,7 @@ export default class CreateOrderPost extends Component {
       <img src={chair} width="90%" height="84%" />
     </div>
     <div class="col-6">
-    <div className="card" style={{width: "85%"}}>
+    <div className="carddd" style={{width: "85%"}}>
           <div className="card-body">
             <div className="col-md-8 mt-4 mx-auto">
               <h1 className="text-center topic">Order Detail Form </h1>
@@ -168,7 +182,9 @@ export default class CreateOrderPost extends Component {
                     onChange={this.handleInputChange} />
                 </div>
 
-                <label style={{ marginBottom: '5px' }} className="topic">Order Status: Pending  </label>
+                <label style={{ marginBottom: '5px' }} className="topic">Order Status: Pending</label>
+                <br/>
+                <label style={{ marginBottom: '5px' }} className="topic">Order Total: {this.state.cartTotal}</label>
                 <br />
 
 
@@ -189,7 +205,7 @@ export default class CreateOrderPost extends Component {
       
         <br />
         <br/>
-        
+        {this.state.name}
         <section id="hire">
           <div className="move">
             <div class="container-fluid">

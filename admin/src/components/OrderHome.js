@@ -77,7 +77,7 @@ render(){
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Order ID</th>
+            <th scope="col">Order Index</th>
             <th scope="col">Customer Name</th>
             <th scope="col">PostalNo</th>
             <th scope="col">Street</th>
@@ -85,6 +85,7 @@ render(){
             <th scope="col">Contact Number</th>
             <th scope="col">Order Date</th>
             <th scope="col">Status</th>
+            <th scope="col">Order Total(LKR)</th>
             <th scope="col">action</th>
           </tr>
         </thead>
@@ -104,14 +105,19 @@ render(){
                 <td>{posts.contactNo}</td>
                 <td>{posts.orderDate}</td>
                 <td>{posts.status}</td>
+                <td>{posts.cartTotal}</td>
 
                 <td>
+                <a className="btn btn-primary" href={`/order/post/${posts._id}`}>
+                    <i className="fas fa-eye"></i>
+                  </a>
+                  &nbsp;
                   <a className="btn btn-warning" href={`order/edit/${posts._id}`}>
-                    <i className="fas fa-edit"></i>&nbsp;Edit
+                    <i className="fas fa-edit"></i>
                   </a>
                   &nbsp;
                   <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(posts._id)}>
-                    <i className="fas fa-edit"></i>&nbsp;Delete
+                    <i className="fas fa-trash-alt"></i>
                   </a>
                 </td>
               </tr>

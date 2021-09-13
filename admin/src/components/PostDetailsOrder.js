@@ -24,7 +24,7 @@ class PostDetailsOrder extends Component{
     });
   }
     render(){
-      const {name,postalNo,street,town,contactNo,orderDate,status} = this.state.post;
+      const {name,postalNo,street,town,contactNo,orderDate,status,cartTotal} = this.state.post;
       return(
         <div className="container">
         <div style={{marginTop:'20px'}}>
@@ -46,6 +46,8 @@ class PostDetailsOrder extends Component{
             <dd className="col-sm-9">{orderDate}</dd>
             <dt className="col-sm-3">Status</dt>
             <dd className="col-sm-9">{status}</dd>
+            <dt className="col-sm-3">Order Total</dt>
+            <dd className="col-sm-9">{cartTotal}</dd>
           </dl>
          
         </div>
