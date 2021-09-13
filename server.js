@@ -36,7 +36,7 @@ app.use('/api/deliveries', deliveryRouter);
 app.use('/api/orders', orderRouter);
 //  nuwanthika
 
-const PORT =8081;
+const PORT =8000;
 
 //const DB_URL ='mongodb+srv://twg:twg123@mernapp.zc2p7.mongodb.net/mernCrud?retryWrites=true&w=majority';
 const DB_URL='mongodb+srv://sliit:sliit123@itpcluster.fpcc4.mongodb.net/furnitureDB?retryWrites=true&w=majority';
