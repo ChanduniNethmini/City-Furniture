@@ -8,11 +8,27 @@ const app = express();
 const postRoutes = require('./routes/posts');
 const admincatRoutes = require('./routes/admincat')
 
+const feedbackRouter = require("./routes/feedback.js");
+
+ 
+
 app.use(bodyParser.json());
 app.use(cors());
 
 app.use(postRoutes);
 app.use(admincatRoutes);
+app.use("/feedback",feedbackRouter);
+
+//  nuwanthika
+var driverRouter = require('./routes/driver');
+var vehicleRouter = require('./routes/vehicle');
+var deliveryRouter = require('./routes/delivery');
+var orderRouter = require('./routes/order');
+app.use('/api/drivers', driverRouter);
+app.use('/api/vehicles', vehicleRouter);
+app.use('/api/deliveries', deliveryRouter);
+app.use('/api/orders', orderRouter);
+//  nuwanthika
 
 const PORT =8000;
 

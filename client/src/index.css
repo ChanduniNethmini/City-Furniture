@@ -35,4 +35,15 @@ code {
   font-family: 'Pacifico', cursive;
 }
 
+.cardf{
+  border-style: solid;
+  border-color: rgb(32, 150, 17);
+  border-width: 5px;
+  box-shadow: 0 8px 15px 0 rgba(2, 97, 22, 0.5);
+  align-content: center;
+  margin-left: 100px;
+ 
+
+}
+
 
