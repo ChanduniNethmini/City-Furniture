@@ -1,8 +1,8 @@
 const { query } = require('express');
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
- 
+const mongoose = require('mongoose'); 
+
 
 const orderSchema = new mongoose.Schema({
 	_id: mongoose.ObjectId,
@@ -59,7 +59,7 @@ router.get('/', function (req, res, next) {
 router.get('/getById/:id', function (req, res, next) {
 
 
-	Order.find({ "_id": ObjectID(req.params.id) },
+	Order.find({ "_id":  mongoose.Types.ObjectId(req.params.id) },
 		(e, r) => {
 			res.json(r[0])
 		}
@@ -118,7 +118,7 @@ router.route("/").put(function (req, res) {
 	var { orderID, name, postalNo, street, town, contactNo, orderDate, status, assignedDriver, _id } = req.body;
 
 
-	const query = { "_id": new ObjectID(_id) };
+	const query = { "_id":  mongoose.Types.ObjectId(_id) };
 	const update = {
 		"$set": {
 			orderID,

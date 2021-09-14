@@ -8,13 +8,26 @@ const app = express();
 const postRoutes = require('./routes/posts');
 const admincatRoutes = require('./routes/admincat')
 
+// Shavinda
+const postRoutesP = require('./routes/product_posts');
+const postRoutesC = require('./routes/categoryPosts');
+const postRoutesS = require('./routes/supPosts');
+
+app.use(bodyParser.json());
+app.use(cors());
 const feedbackRouter = require("./routes/feedback.js");
 
  
 
 app.use(bodyParser.json());
-app.use(cors());
-
+app.options('*', cors());
+app.use(cors({
+  origin: '*',
+  credentials: true,
+    exposedHeaders: ["X-Total-Count"],
+    allowedHeaders: ["X-Total-Count"],
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+  }));
 app.use(postRoutes);
 app.use(admincatRoutes);
 app.use("/feedback",feedbackRouter);
@@ -29,6 +42,12 @@ app.use('/api/vehicles', vehicleRouter);
 app.use('/api/deliveries', deliveryRouter);
 app.use('/api/orders', orderRouter);
 //  nuwanthika
+
+// Shavinda
+app.use(postRoutesP);
+app.use(postRoutesC);
+app.use(postRoutesS);
+
 
 const PORT =8000;
 

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
- 
+const mongoose = require('mongoose'); 
+
 
 const vehicleSchema = new mongoose.Schema({
 	_id: mongoose.ObjectId,
@@ -45,7 +45,7 @@ router.get('/getById/:id', function (req, res, next) {
 
 
 
-	Vehicle.find({ "_id": ObjectID(req.params.id) },
+	Vehicle.find({ "_id":  mongoose.Types.ObjectId(req.params.id) },
 		(e, r) => {
 			res.json(r[0])
 		}
@@ -111,7 +111,7 @@ router.route("/").put(function (req, res) {
 
 
 
-	const query = { "_id": new ObjectID(_id) };
+	const query = { "_id":  mongoose.Types.ObjectId(_id) };
 	const update = {
 		"$set": {
 			vehicleID,
@@ -126,7 +126,7 @@ router.route("/").put(function (req, res) {
 
 	Vehicle.findOneAndUpdate(query, update, options, function (e, d) {
 		if (e) return res.send(500, { error: e });
-		res.send('ok')
+		res.send('ok') 
 	})
 })
 
