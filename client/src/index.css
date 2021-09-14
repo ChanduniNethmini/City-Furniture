@@ -9,6 +9,13 @@ body {
 
 }
 
+.textdesign1{
+  font-family: 'MedievalSharp', cursive;
+}
+.textdesign2{
+  font-family: 'MedievalSharp', cursive;
+font-family: 'Pacifico', cursive;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -112,6 +112,7 @@ export default class EditOrderPost extends Component {
                         name="name"
                         placeholder="Enter Your Name"
                         value={this.state.name}
+                        readonly
                         onChange={this.handleInputChange} />
                     </div>
 

@@ -39,7 +39,10 @@ export default class CreatCatePost extends Component {
 
     console.log(data)
     const con=/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
-    if(name.length < 2){
+    if( name== "" ||  parentId== "" || type == "" ){
+      swal("Please fill the form correctly", "Form values cannot be empty", "error");
+    }
+    else if(name.length < 2){
       swal("User name invaide", "length should be greater than 2", "error");
     }
     else if((!con.test(String(type)))){

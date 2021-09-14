@@ -67,7 +67,10 @@ export default class CreateOrderPost extends Component {
     //validation
 
     const re = /^[0-9\b]+$/;
-    if(name.length < 2){
+    if(name == "" || postalNo == "" || street == "" || town == "" || contactNo == "" || orderDate==""){
+      swal("Please fill the form correctly", "Form values cannot be empty", "error");
+    }
+    else if(name.length < 2){
       swal("User name invaide", "length should be greater than 2", "error");
     } 
     else if( (!re.test(String(contactNo))) || (contactNo.length != 10)){
@@ -76,22 +79,43 @@ export default class CreateOrderPost extends Component {
       swal(" Please enter valid town", "length should be greater than 2", "error");
     }
      else{
-      axios.post("/post/save", data).then((res) => {
-        if (res.data.success) {
-          this.setState(
-            {
-              name: "",
-              postalNo: "",
-              street: "",
-              town: "",
-              contactNo: "",
-              orderDate: "",
-              status: ""
-            }
-          )
-          swal("Order Added Successfully!", "Your oder will be accepted", "success");
-        }
+
+      swal({
+        title: "Are you sure?",
+        text: `Name: ${this.state.name} | Postal No.: ${this.state.postalNo} | Street: ${this.state.street} | Town: ${this.state.town} | Contact No: ${this.state.contactNo} | Status: ${this.state.status} | Total: ${this.state.cartTotal}` ,
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
       })
+      .then((willDelete) => {
+        if (willDelete) {
+
+          axios.post("/post/save", data).then((res) => {
+            if (res.data.success) {
+              this.setState(
+                {
+                  name: "",
+                  postalNo: "",
+                  street: "",
+                  town: "",
+                  contactNo: "",
+                  orderDate: "",
+                  status: "Pending",
+                
+                }
+              )
+              // swal("Order Added Successfully!", "Your oder will be accepted"+ `${this.state.status}`, "success");
+            }
+          })
+          swal("Order Added Successfully!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your Order is not completed!");
+        }
+      });
+
+      
     } 
 
 

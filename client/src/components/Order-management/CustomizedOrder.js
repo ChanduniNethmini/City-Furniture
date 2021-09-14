@@ -21,7 +21,7 @@ const CustomizedOrder = (props) => {
       <h2 className="text-center"><u><b>Customized Orders</b></u></h2>
       <br />
       <h4 className="text-center" >
-        <p className="text">
+        <p className="textdesign1">
           <p className="text-danger">
             <b>Looking for a Unique designs ? </b>Or make your <b>Dream furniture </b>from our talented, well-experienced experts.
           </p></p></h4>
@@ -37,7 +37,7 @@ const CustomizedOrder = (props) => {
             <br />
             <br />
             <h5 className="card-title">
-              <p className="newtext">Wood</p></h5>
+              <p className="textdesign2"><b>Wood</b></p></h5>
             <p className="card-text">We have variety of wood ranges. City furniture is famous for quality products. We offer life-time warrenty for wood to all our customers</p>
           </div>
           <div className="card-footer">
@@ -47,7 +47,7 @@ const CustomizedOrder = (props) => {
         <div className="card">
           <img src={steel} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"> <p className="newtext">Stainless Steel</p></h5>
+            <h5 className="card-title"> <p className="textdesign2"><b>Stainless Steel</b></p></h5>
             <p className="card-text">You can cutomized your stainless steel product with high quality, durable standards.</p>
           </div>
           <div className="card-footer">
@@ -57,7 +57,7 @@ const CustomizedOrder = (props) => {
         <div className="card">
           <img src={plyw} className="card-img-top" />
           <div className="card-body">
-            <h5 className="card-title"><p className="newtext">Plywood  </p>  </h5>
+            <h5 className="card-title"><p className="textdesign2"><b>Plywood  </b></p>  </h5>
             <p className="card-text">We have number of variety of furniture products made up of Plywood.</p>
           </div>
           <div className="card-footer">
@@ -113,21 +113,21 @@ const CustomizedOrder = (props) => {
             <img src={shop} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>City Furniture Store</h5>
-              <p className="newtext">City Furniture. A greate unique icon in Furniture.... Kaduwela, SriLanka.... </p>
+              <p className="textdesign1">City Furniture. A greate unique icon in Furniture.... Kaduwela, SriLanka.... </p>
             </div>
           </div>
           <div className="carousel-item">
             <img src={newchair} className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
               <h5>Luxury, unique Designing</h5>
-              <p className="newtext">Our unique, luxury designs make City Furniture a quality brand.....</p>
+              <p className="textdesign1">Our unique, luxury designs make City Furniture a quality brand.....</p>
             </div>
           </div>
           <div className="carousel-item">
             <img src={workshop} className="d-block w-100" alt="AAAA" />
             <div className="carousel-caption d-none d-md-block">
               <h5>City Furniture Work-shop</h5>
-              <p className="newtext">We have around 40 human resources which are experts in making furniture... Moratuwa, SriLanka.....</p>
+              <p className="textdesign1">We have around 40 human resources which are experts in making furniture... Moratuwa, SriLanka.....</p>
             </div>
           </div>
         </div>
@@ -141,7 +141,8 @@ const CustomizedOrder = (props) => {
         </button>
       </div>
       </div>
-
+    <br/>
+    <br/>
     </div>
 
   )
