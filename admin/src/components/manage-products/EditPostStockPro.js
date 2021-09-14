@@ -147,7 +147,7 @@ export default class EditPostStockPro extends Component{
       <SidebarStock/>
         <div className="container">
 
-        <div className = "card" style={{marginTop:'40px'}}>
+        <div className = "cardU" style={{marginTop:'40px'}}>
         <div className = "card-body">   
 
         <div className="col-md-8 mt-4 mx-auto"></div>

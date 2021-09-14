@@ -138,7 +138,8 @@ export default class CreatePostStockCat extends Component {
           </div>
           <div className="col-sm">
           
-          <div className = "card" style = {{marginTop:"7%"}}>
+        
+          <div className = "cardS" style = {{marginTop:"7%"}}>
           <div className = "card-body">
 
           <div className="col-md-8 mt-4 mx-auto">
@@ -249,6 +250,7 @@ export default class CreatePostStockCat extends Component {
         </div>
         </div>
         </div>
+      
           </div>
         </div>
 

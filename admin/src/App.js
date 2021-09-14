@@ -47,12 +47,7 @@ import feedbackList from "./components/feedback/feedback-list";
       render() {
         return(
           <BrowserRouter>
-   
-     {/* <h1>Admin dashboard</h1>
-    <a href="/order">Orders</a>
-    <br/>
-    <a href="/">Category</a> */}
-         
+           
       
         <Route path="/" exact component={adminDashboard}></Route>
 

@@ -74,12 +74,12 @@ export const SidebarDataStock = [
     subNav: [
       {
         title: 'Add Supplier',
-        path: 'addS',
+        path: '/addS',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: 'Manage Supplier',
-        path: 'homeS',
+        path: '/homeS',
         icon: <IoIcons.IoIosPaper />
       }
     ]

@@ -48,7 +48,7 @@ export default class PostDetailsStockCat extends Component{
 
   <div style = {{marginTop: '20px'}}>
 
-  <div className="card">
+  <div className="cardS">
   <div className = "card-body" style = {{marginTop: '60px'}}> 
 
   <div className="row">
