@@ -65,7 +65,6 @@ import feedbackList from "./components/feedback/feedback-list";
         <Route path="/order" exact component={OrderHome}></Route>
         <Route path="/order/edit/:id" exact component={EditOrderPost}></Route>
         <Route path="/order/post/:id" exact component={PostDetailsOrder}></Route>
-<<<<<<< HEAD
 
 
         {/* Shavinda */}
@@ -91,13 +90,11 @@ import feedbackList from "./components/feedback/feedback-list";
         <Route path = "/req" component={RequestProducts}></Route>
 
                    
-=======
         
         <Route path = "/feedback/" exact component = { feedbackList }/>
        
 
          
->>>>>>> f9ba8566d47e2686f95444deac44089b98bda4d0
    
    </BrowserRouter>
     )
