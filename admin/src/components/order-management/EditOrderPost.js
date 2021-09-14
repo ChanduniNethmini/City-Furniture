@@ -96,6 +96,8 @@ export default class EditOrderPost extends Component {
 
   render() {
     return (
+      <>
+      <sidebarOrderandCat/>
       <div className="container">
         <div class="row">
           <div class="col-6">
@@ -200,6 +202,7 @@ export default class EditOrderPost extends Component {
         <br />
         <br />
       </div>
+      </>
     )
   }
 }

@@ -7,6 +7,7 @@ import chair from "../../img/chair.jpg";
 export default class CreateOrderPost extends Component {
 
   //intialization
+ 
 
   constructor(props) {
     super(props);
@@ -26,8 +27,9 @@ export default class CreateOrderPost extends Component {
     const cart = localStorage.getItem('react-use-cart');
     const cartdata = JSON.parse(cart);
     console.log(cartdata.cartTotal)
+    
     this.setState({
-      cartTotal: cartdata.cartTotal
+      cartTotal: cartdata.cartTotal,
     })
 
   }
@@ -92,6 +94,7 @@ export default class CreateOrderPost extends Component {
 
           axios.post("/post/save", data).then((res) => {
             if (res.data.success) {
+              localStorage.removeItem("react-use-cart")
               this.setState(
                 {
                   name: "",
@@ -103,6 +106,7 @@ export default class CreateOrderPost extends Component {
                   status: "Pending",
                 
                 }
+                
               )
               // swal("Order Added Successfully!", "Your oder will be accepted"+ `${this.state.status}`, "success");
             }

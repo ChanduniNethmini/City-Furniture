@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import swal from 'sweetalert';
+import Footer from '../Footer/Footer';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
+
+
 
 class CatHome extends Component {
   constructor(props) {
@@ -55,7 +59,10 @@ class CatHome extends Component {
 
   render() {
     return (
-     
+     <div>
+        <SidebarOrder/>
+        <br/>
+        <br/>
       <div className="container">
         <div className="text-center">
         <h3 className="adminletter"> Category / SubCategory Summary </h3>
@@ -105,6 +112,10 @@ class CatHome extends Component {
         </div>
       </table>
        
+      </div>
+      <br/>
+      <br/>
+      <Footer />
       </div>
     )
   }
