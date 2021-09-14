@@ -87,7 +87,7 @@ class CatHome extends Component {
                 <td>{posts.type}</td>
                 
                 <td>
-                  <a className="btn btn-warning" href={`category/edit/${posts._id}`}>
+                  <a className="btn btn-warning" href={`/category/edit/${posts._id}`}>
                     <i className="fas fa-edit"></i>&nbsp;Edit
                   </a>
                   &nbsp;

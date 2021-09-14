@@ -42,6 +42,9 @@ export default class CreatCatePost extends Component {
     if( name== "" ||  parentId== "" || type == "" ){
       swal("Please fill the form correctly", "Form values cannot be empty", "error");
     }
+   else if( name== "" ||  parentId== "" || type == "" ){
+      swal("Please fill the form correctly", "Form values cannot be empty", "error");
+    }
     else if(name.length < 2){
       swal("User name invaide", "length should be greater than 2", "error");
     }
