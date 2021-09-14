@@ -113,7 +113,7 @@ render(){
                     <i className="fas fa-eye"></i>
                   </a>
                   &nbsp;
-                  <a className="btn btn-warning" href={`order/edit/${posts._id}`}>
+                  <a className="btn btn-warning" href={`/order/edit/${posts._id}`}>
                     <i className="fas fa-edit"></i>
                   </a>
                   &nbsp;

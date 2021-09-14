@@ -27,6 +27,7 @@ code {
   border-color: black;
   border-width: 5px;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgb(180, 211, 248);
 
 }
 .cardedit{
