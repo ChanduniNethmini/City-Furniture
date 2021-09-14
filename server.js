@@ -8,7 +8,6 @@ const app = express();
 const postRoutes = require('./routes/posts');
 const admincatRoutes = require('./routes/admincat')
 
-<<<<<<< HEAD
 // Shavinda
 const postRoutesP = require('./routes/product_posts');
 const postRoutesC = require('./routes/categoryPosts');
@@ -16,11 +15,9 @@ const postRoutesS = require('./routes/supPosts');
 
 app.use(bodyParser.json());
 app.use(cors());
-=======
 const feedbackRouter = require("./routes/feedback.js");
 
  
->>>>>>> f9ba8566d47e2686f95444deac44089b98bda4d0
 
 app.use(bodyParser.json());
 app.options('*', cors());
