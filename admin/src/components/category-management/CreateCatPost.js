@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Footer from '../Footer/Footer';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
 
 export default class CreatCatePost extends Component {
 
@@ -51,6 +53,17 @@ export default class CreatCatePost extends Component {
     else if((!con.test(String(type)))){
       swal("Type invaide", "Cannot contain Numerics", "error");
     } else{
+
+      swal({
+        title: "Are you sure?",
+        text: `Name: ${this.state.name} | Postal No.: ${this.state.postalNo} | Street: ${this.state.street} | Town: ${this.state.town} | Contact No: ${this.state.contactNo} | Status: ${this.state.status} | Total: ${this.state.cartTotal}` ,
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+
     axios.post("http://localhost:8000/admincat/save",data).then((res) =>{
       if(res.data.success){
         this.setState(
@@ -59,26 +72,37 @@ export default class CreatCatePost extends Component {
               parentId:"",
               type:""
               
+            }
+                
+            )
+            // swal("Order Added Successfully!", "Your oder will be accepted"+ `${this.state.status}`, "success");
           }
-        )
-        swal("Added Successfully", "Category/Sub category added successfully", "success");
+        })
+        swal("Category Added Successfully!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your Order is not completed!");
       }
-    })
+    });
 
-  }
-}
+    
+  } 
 
+
+}   
   render() {
     return (
 
-      
+      <>
+        <SidebarOrder/>
       <div className="container">
         <div class="row">
           <div class="col-6">
             <br/>
             <br/>
           <div className="card" style={{ width: "80%" }}>
-          <div className="cardedit">   
+          <div className="cardmy">   
         <div className="col-md-8 mt-4 mx-auto">
           <h1 className="h3 mb-3 font-weight-normal adminletter text-center ">Category/Sub Category Adding Form</h1>
           <form className="needs-validation" noValidate  align="center">
@@ -151,7 +175,11 @@ export default class CreatCatePost extends Component {
 </div>
           </div>
       </div> 
-        
+      <br/>
+      <br/>
+      <Footer />
+      
+        </>
     )
   }
 }

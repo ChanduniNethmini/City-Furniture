@@ -54,6 +54,7 @@ handleSearchArea =(e) =>{
 }
 render(){
     return (
+      <>
       
       <div className="container">
         <div className="text-center">
@@ -129,6 +130,7 @@ render(){
       </table>
        
       </div>
+      </>
     )
   }
 }

@@ -92,7 +92,7 @@ export default class dashboard extends Component{
             <div class="text-center">
       <div class="row">
         <div class="col-sm">
-        <a className="btn btn-primary btn-lg" href="/category/home" role="button">Manage Categories</a><br /><br />
+        <a className="btn btn-primary btn-lg" href="/category" role="button">Manage Categories</a><br /><br />
         </div>
       </div>
     </div>
