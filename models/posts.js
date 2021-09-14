@@ -27,6 +27,10 @@ const postSchema = new mongoose.Schema({
     status:{
         type:String,
         default:"Pending"
+    },
+    cartTotal:{
+        type:String,
+        required:true
     }
 
      
