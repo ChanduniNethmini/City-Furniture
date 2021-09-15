@@ -146,7 +146,7 @@ export default class CreatePostStockSup extends Component {
           <img src = {chair1} width="70%" />
           </div>
           <div className="col-sm">
-          <div className = "card" style = {{marginTop:"4%"}}>
+          <div className = "cardS" style = {{marginTop:"4%"}}>
           <div className = "card-body">
 
         <div className="col-md-8 mt-4 mx-auto">

@@ -110,7 +110,9 @@ export default class EditOrderPost extends Component {
           <div class="col-6">
             <br />
           
-            <div className="cardedit" style={{ width: "100%" }}>
+            {/* <div className="cardedit" style={{ width: "100%" }}> */}
+            <div className = "cardmy">
+            <div className="card" style={{backgroundColor:"rgb(180, 211, 248)" }}>
               <div className="card-body">
                 <div className="col-md-8 mt-4 mx-auto">
                   <h1 className="h3 mb-3 font-weight-normal adminletter text-center">Order Detail Edit Form </h1>
@@ -202,6 +204,7 @@ export default class EditOrderPost extends Component {
 
                 </div>
               </div>
+            </div>
             </div>
           </div>
 

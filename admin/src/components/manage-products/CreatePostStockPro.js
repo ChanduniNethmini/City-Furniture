@@ -158,7 +158,7 @@ export default class CreatePostStockPro extends Component {
           </div>
           <div class="col-sm">
 
-          <div className = "card" style={{marginTop:'40px'}}>
+          <div className = "cardS" style={{marginTop:'40px'}}>
         <div className = "card-body">   
         
         <div className="col-md-8 mt-4 mx-auto">

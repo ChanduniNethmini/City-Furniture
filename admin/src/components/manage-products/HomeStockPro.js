@@ -42,18 +42,22 @@ onDelete = (id) =>{
   axios.delete(`/postPro/delete/${id}`).then((res)=>{
     swal({
       title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this Product details!",
+      text: "Once deleted, you will not be able to recover this product details !",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Product details has been deleted!", {
-          icon: "success",
+
+      .then((willDelete) => {
+        if (willDelete) { 
+          swal("Product details has been deleted!", {
+            icon: "success",
         });
-      } 
+      } else {
+        swal("Your imaginary file is safe!");
+      }
     });
+
   this.retrievePosts();
 
   })

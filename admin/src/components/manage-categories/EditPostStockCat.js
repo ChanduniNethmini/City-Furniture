@@ -5,6 +5,7 @@ import '../styles/formStyles.css';
 import swal from 'sweetalert';
 import SidebarStock from '../SidebarStock/SidebarStock';
 
+
 export default class EditPostStockCat extends Component{
 
 
@@ -124,7 +125,8 @@ export default class EditPostStockCat extends Component{
           <div>
           <SidebarStock/>  
           <div className = "container">    
-          <div className = "card" style={{marginTop:'40px'}}>
+
+          <div className = "cardU" style={{marginTop:'40px'}}>
           <div className = "card-body">  
 
             <div className="col-md-8 mt-4 mx-auto">
@@ -132,7 +134,7 @@ export default class EditPostStockCat extends Component{
               <h1 className="h3 mb-3 font-weight-normal" style = {{backgroundColor:'cyan',  margin:"0"}}><font face = "Comic sans MS" size ="6"><b>Update Category</b></font></h1><br/>
               </center>
               <br/>
-              <form className="needs-validation" noValidate>
+              <form className="needs-validation" noValidate >
                 <div className="form-group" style={{marginBottom:'15px'}}>
                   <label style={{marginBottom:'5px'}} >Category ID</label>
                   <input type="text"
