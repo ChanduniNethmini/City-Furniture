@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
+import Footer from '../Footer/Footer';
 
 export default class EditOrderPost extends Component {
 
@@ -97,18 +99,24 @@ export default class EditOrderPost extends Component {
   render() {
     return (
       <>
-      <sidebarOrderandCat/>
+       <SidebarOrder/>
       <div className="container">
         <div class="row">
+        
+    <div class="col-6">
+      
+      <img src="https://cdn.dribbble.com/users/77598/screenshots/6606509/dribbble2.gif"  className="rounded-circle" />
+    </div>
           <div class="col-6">
             <br />
-            <div className="card" style={{ width: "100%" }}>
+          
+            <div className="cardedit" style={{ width: "100%" }}>
               <div className="card-body">
                 <div className="col-md-8 mt-4 mx-auto">
                   <h1 className="h3 mb-3 font-weight-normal adminletter text-center">Order Detail Edit Form </h1>
                   <form className="needs-validation" >
                     <div className="form-group" style={{ marginBottom: '15px' }}>
-                      <label style={{ marginBottom: '5px' }} >Customer Name: </label>
+                      <label style={{ marginBottom: '5px' }}  className="adminletter">Customer Name: </label>
                       <input type="text"
                         className="form-control"
                         name="name"
@@ -119,11 +127,11 @@ export default class EditOrderPost extends Component {
                     </div>
 
 
-                    <label style={{ marginBottom: '5px' }} >Address: </label>
+                    <label style={{ marginBottom: '5px' }} className="adminletter" >Address: </label>
                     <div class="row">
                       <div class="col">
                         <input type="text"
-                          className="form-control"
+                          className="form-control "
                           name="postalNo"
                           placeholder="postal no"
                           value={this.state.postalNo}
@@ -150,7 +158,7 @@ export default class EditOrderPost extends Component {
 
 
                     <div className="form-group" style={{ marginBottom: '15px' }}>
-                      <label style={{ marginBottom: '5px' }}>Contact Number</label>
+                      <label style={{ marginBottom: '5px' }}  className="adminletter">Contact Number</label>
                       <input type="text"
                         className="form-control"
                         name="contactNo"
@@ -161,7 +169,7 @@ export default class EditOrderPost extends Component {
 
 
                     <div className="form-group" style={{ marginBottom: '15px' }}>
-                      <label style={{ marginBottom: '5px' }}>Order Date</label>
+                      <label style={{ marginBottom: '5px' }}  className="adminletter">Order Date</label>
                       <input type="date"
                         className="form-control"
                         name="orderDate"
@@ -172,7 +180,7 @@ export default class EditOrderPost extends Component {
 
 
                     <div className="form-group" style={{ marginBottom: '15px' }}>
-                      <label style={{ marginBottom: '5px' }}>Status</label>
+                      <label style={{ marginBottom: '5px' }}  className="adminletter">Status</label>
                       <input type="text"
                         className="form-control"
                         name="status"
@@ -184,7 +192,7 @@ export default class EditOrderPost extends Component {
                     <br />
                     <br />
                     <div className="text-center">
-                      <button className="btn btn-success" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
+                      <button className="btn btn-primary" type="submit" style={{ marginTop: '15px' }} onClick={this.onSubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Update
                       </button>
@@ -201,6 +209,7 @@ export default class EditOrderPost extends Component {
         
         <br />
         <br />
+        <Footer />
       </div>
       </>
     )

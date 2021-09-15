@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
+import Footer from '../Footer/Footer';
 
 /**
 * @author
@@ -29,7 +31,9 @@ class PostDetailsCat extends Component {
   }
  render() {
   const {name,parentId,type} = this.state.post;
-  return(
+  return( 
+    <div>
+    <SidebarOrder/>
     <div className="container">
         <div style={{marginTop:'20px'}}>
           <h1>{name}</h1>
@@ -47,7 +51,30 @@ class PostDetailsCat extends Component {
           
          
         </div>
+
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <Footer />
+        </div>
+        
       )
    }
  }

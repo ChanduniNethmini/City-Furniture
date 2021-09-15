@@ -11,7 +11,8 @@ class HomeMainOrder extends Component {
       <SidebarOrder/>
    <div className="text-center">
      <br/>
-     <h1>Order Management</h1>
+     {/* modified */}
+     <h1 className="adminletter">Order Management</h1>
      <img src="https://cdn.dribbble.com/users/291221/screenshots/2026983/server-guy.gif" className="rounded-circle"/>
      
      <br/>

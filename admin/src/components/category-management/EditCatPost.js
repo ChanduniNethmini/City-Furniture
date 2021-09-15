@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-//import down from '../img/down.jpg'
+//import down from '../img/down.jpg';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
+import Footer from '../Footer/Footer';
 
 export default class EditCatPost extends Component {
 
@@ -82,7 +84,12 @@ export default class EditCatPost extends Component {
 
   render() {
     return (
-
+      <>
+       <SidebarOrder/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
       <div className="container">
         <div class="row">
           <div class="col-6">
@@ -109,7 +116,7 @@ export default class EditCatPost extends Component {
               style={{ width: "80%" }}
             // style={{marginRight:"5%"}}
             >
-              <div className="cardedit">
+              <div className="cardmy">
                 <div className="col-md-8 mt-4 mx-auto">
                   <h1 className="h3 mb-3 font-weight-normal adminletter text-center">Category Edit Form </h1>
                   <form className="needs-validation" >
@@ -170,6 +177,15 @@ export default class EditCatPost extends Component {
         </div>
         
       </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      <Footer />
+      </>
 
 
     )

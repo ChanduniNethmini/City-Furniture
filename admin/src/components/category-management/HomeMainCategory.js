@@ -14,7 +14,7 @@ class HomeMainCategory extends Component {
             <>
              <SidebarOrder/>
             <div className="text-center">
-                <h1>Category Management</h1>
+                <h1 className="adminletter">Category Management</h1>
                 <br />
                 <br />
                 <img src="https://thumbs.gfycat.com/LimpFrayedAnemoneshrimp-size_restricted.gif" />

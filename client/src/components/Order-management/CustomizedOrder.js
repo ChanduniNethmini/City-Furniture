@@ -18,7 +18,7 @@ const CustomizedOrder = (props) => {
   return (
     <div className="container-sm">
 
-      <h2 className="text-center"><u><b>Customized Orders</b></u></h2>
+      <h2 className="text-center topic"><b>Customized Your Design</b></h2>
       <br />
       <h4 className="text-center" >
         <p className="textdesign1">

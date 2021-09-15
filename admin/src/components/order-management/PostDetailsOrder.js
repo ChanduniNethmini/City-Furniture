@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
 
 class PostDetailsOrder extends Component{
   constructor(props){
@@ -26,12 +27,14 @@ class PostDetailsOrder extends Component{
     render(){
       const {name,postalNo,street,town,contactNo,orderDate,status,cartTotal} = this.state.post;
       return(
+        <>
+         <SidebarOrder/>
         <div className="container">
-        <div style={{marginTop:'20px'}}>
+        <div class="row">
+        <div class="col-6">
+    <div style={{marginTop:'20px'}}>
           <h1>{name}</h1>
-          <div className="imageprofile">
-          <img src="https://i.pinimg.com/originals/91/7c/06/917c06856035dd3d396b62916d082472.gif "alt="..." className="rounded-circle" style={{marginLeft:"20%"}}/>
-          </div>
+          
           <hr/>
           <dl className="row">
             <dt className="col-sm-3">Postal No</dt>
@@ -51,7 +54,18 @@ class PostDetailsOrder extends Component{
           </dl>
          
         </div>
+    </div>
+    <div class="col-6">
+    <div className="imageprofile">
+          <img src="https://i.pinimg.com/originals/91/7c/06/917c06856035dd3d396b62916d082472.gif "alt="..." className="rounded-circle" style={{marginLeft:"20%"}}/>
+          </div>
+    </div>
+    
+    
+  </div>
+        
         </div>
+        </>
         
       )
     }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
+import SidebarOrder from '../Sidebar-Order/SidebarOrder';
+import Footer from '../Footer/Footer';
 
  class OrderHomeOrder extends Component{
   constructor(props){
@@ -25,12 +27,18 @@ retrievePosts(){
   });
 }
 
+
+
 onDelete=(id)=>{
   axios.delete(`http://localhost:8000/post/delete/${id}`).then((res)=>{
     swal("Deleted Successful", "Category is removed", "success");
+    
+    
     this.retrievePosts();
   })
 }
+
+
 
 filterData(posts,searchKey){
   const result =posts.filter((post)=>
@@ -55,10 +63,11 @@ handleSearchArea =(e) =>{
 render(){
     return (
       <>
-      
+       <SidebarOrder/>
       <div className="container">
         <div className="text-center">
         <h2 className="adminletter"> Order Summary </h2>
+        
         </div>
         <div className="col-md-6 mb-4">
         <form class="form-inline">
@@ -113,7 +122,7 @@ render(){
                     <i className="fas fa-eye"></i>
                   </a>
                   &nbsp;
-                  <a className="btn btn-warning" href={`order/edit/${posts._id}`}>
+                  <a className="btn btn-warning" href={`/order/edit/${posts._id}`}>
                     <i className="fas fa-edit"></i>
                   </a>
                   &nbsp;
@@ -128,8 +137,20 @@ render(){
         <br/>
         
       </table>
-       
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
+   
       </div>
+      <Footer />
       </>
     )
   }

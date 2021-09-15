@@ -29,10 +29,29 @@ class CatHome extends Component {
     });
   }
   onDelete=(id)=>{
-    axios.delete(`http://localhost:8000/admincat/delete/${id}`).then((res)=>{
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+
+      if (willDelete) {
+        axios.delete(`http://localhost:8000/admincat/delete/${id}`).then((res)=>{
       swal("Deleted Successful", "Category is removed", "success");
       this.retrievePosts();
     })
+        // swal("Poof! Your imaginary file has been deleted!", {
+        //   icon: "success",
+        // });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+
+    
   }
 
   filterData(admincat,searchKey){
