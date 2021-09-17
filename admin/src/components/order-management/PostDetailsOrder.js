@@ -33,6 +33,7 @@ class PostDetailsOrder extends Component{
         <div class="row">
         <div class="col-6">
     <div style={{marginTop:'20px'}}>
+      <br/><br/>
           <h1>{name}</h1>
           
           <hr/>
@@ -55,9 +56,9 @@ class PostDetailsOrder extends Component{
          
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-6" style={{}}>
     <div className="imageprofile">
-          <img src="https://i.pinimg.com/originals/91/7c/06/917c06856035dd3d396b62916d082472.gif "alt="..." className="rounded-circle" style={{marginLeft:"20%"}}/>
+          <img src="https://i.pinimg.com/originals/91/7c/06/917c06856035dd3d396b62916d082472.gif "alt="..." className="rounded-circle" style={{marginLeft:"0%"}}/>
           </div>
     </div>
     

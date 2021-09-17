@@ -71,11 +71,15 @@ export default class CreateOrderPost extends Component {
     //validation
 
     const re = /^[0-9\b]+$/;
+    const con=/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
     if (name == "" || postalNo == "" || street == "" || town == "" || contactNo == "" || orderDate == "") {
       swal("Please fill the form correctly", "Form values cannot be empty", "error");
     }
     else if (name.length < 2) {
       swal("User name invaide", "length should be greater than 2", "error");
+    }
+    else if((con.test(String(postalNo)))){
+      swal("Postal Number invaide", "Cannot contain Letters", "error");
     }
     else if ((!re.test(String(contactNo))) || (contactNo.length != 10)) {
       swal("Contact Number invaide", "contact number should be valide pattern", "error");
@@ -142,7 +146,7 @@ export default class CreateOrderPost extends Component {
   <div className="col-md-8 mt-4 mx-auto">
     <h1 className="text-center topic">Order Detail Form </h1>
 
-    <form className="needs-validation" align="center" style={{ width: "100%" }} >
+    <form className="needs-validation" align="center" style={{ width: "80%" }} >
       <div className="form-group" style={{ marginBottom: '15px' }}>
         <label style={{ marginBottom: '5px' }} className="topic">Customer Name: </label>
         <input type="text"

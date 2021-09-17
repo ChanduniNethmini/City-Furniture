@@ -30,12 +30,26 @@ retrievePosts(){
 
 
 onDelete=(id)=>{
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this imaginary file!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+
+    if (willDelete) {
   axios.delete(`http://localhost:8000/post/delete/${id}`).then((res)=>{
     swal("Deleted Successful", "Category is removed", "success");
-    
-    
+      
     this.retrievePosts();
   })
+} else {
+  swal("Your imaginary file is safe!");
+}
+});
+
 }
 
 

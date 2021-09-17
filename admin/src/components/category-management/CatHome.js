@@ -54,24 +54,23 @@ class CatHome extends Component {
     
   }
 
-  filterData(admincat,searchKey){
-    const result =admincat.filter((post)=>
-    post.name.toLowerCase().includes(searchKey)
-    
+  filterData(posts,searchKey){
+    const result =posts.filter((post)=>
+    post.name.toLowerCase().includes(searchKey)||
+    post.type.toLowerCase().includes(searchKey)
    
     
     )
-   this.setState({admincat:result})
+    this.setState({posts:result})
   }
   
   handleSearchArea =(e) =>{
     const searchKey=e.currentTarget.value;
   
-    axios.get("admincat").then(res =>{
+    axios.get("http://localhost:8000/admincat").then(res =>{
       if(res.data.success){
   
         this.filterData(res.data.existingPosts,searchKey)
-       // console.log(e.currentTarget.value);
       }
     });
   }
@@ -88,6 +87,20 @@ class CatHome extends Component {
         </div>
       <br/>
       <br/>
+      
+        <div className="col-md-6 mb-4">
+        <form class="form-inline">
+        <i class="fas fa-search" aria-hidden="true"></i>
+          <input
+          className="form-control form-control-sm ml-3 w-75"
+          type="search"
+          placeholder="search"
+          name="searchQuery"
+          onChange={this.handleSearchArea}>
+          </input>
+          </form>
+        </div>
+
       <table class="table table-striped">
         <thead>
           <tr>
